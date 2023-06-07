@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6890753C-EFFF-4E0E-83E2-0E63B4C7221A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Parking.App.Factory</RootNamespace>
+    <AssemblyName>Parking.App.Factory</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ProgramFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Connect.Common\Connect.Common.csproj">
+      <Project>{12D9262B-762C-43D0-BEFA-5837B5C87038}</Project>
+      <Name>Connect.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Connect.RemoteDataProvider\Connect.RemoteDataProvider.csproj">
+      <Project>{25DEB9E9-AD99-482A-817B-6F7F58E3B84F}</Project>
+      <Name>Connect.RemoteDataProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Connect.SocketClient\Connect.SocketClient.csproj">
+      <Project>{84F67D5D-2561-45FE-BE48-41220D72C3A0}</Project>
+      <Name>Connect.SocketClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Parking.App.Interface\Parking.App.Interface.csproj">
+      <Project>{B63B96BD-00CC-45A4-AC12-66B88C5DF490}</Project>
+      <Name>Parking.App.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Parking.App.Service\Parking.App.Service.csproj">
+      <Project>{B9372C81-0110-4361-B7B9-DE618A4D9D3C}</Project>
+      <Name>Parking.App.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

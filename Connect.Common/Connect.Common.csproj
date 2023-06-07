@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12D9262B-762C-43D0-BEFA-5837B5C87038}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Connect.Common</RootNamespace>
+    <AssemblyName>Connect.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collection\InfoCollection.cs" />
+    <Compile Include="Collection\ThreadSafeQueue.cs" />
+    <Compile Include="Collection\ViewEntityCollection.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Contract\ApplicationInfo.cs" />
+    <Compile Include="Contract\ExceptionInfo.cs" />
+    <Compile Include="Contract\FilterDataInfo.cs" />
+    <Compile Include="Contract\InfoBase.cs" />
+    <Compile Include="Contract\PaginateInfo.cs" />
+    <Compile Include="Contract\RequestInfo.cs" />
+    <Compile Include="Contract\ResultInfo.cs" />
+    <Compile Include="Contract\SearchOrderInfo.cs" />
+    <Compile Include="Contract\ServiceErrorInfo.cs" />
+    <Compile Include="Contract\SessionInfo.cs" />
+    <Compile Include="Contract\SortDataInfo.cs" />
+    <Compile Include="Contract\UnknownUpdatedInfo.cs" />
+    <Compile Include="EventHandler.cs" />
+    <Compile Include="Helper\ConnectDatas.cs" />
+    <Compile Include="Helper\HexHelper.cs" />
+    <Compile Include="Helper\JsonHelper.cs" />
+    <Compile Include="Helper\ObjectConvert.cs" />
+    <Compile Include="Helper\ProviderHelper.cs" />
+    <Compile Include="Helper\SystemSetting.cs" />
+    <Compile Include="Interface\IEntity.cs" />
+    <Compile Include="Interface\IIdentify.cs" />
+    <Compile Include="Interface\IInfo.cs" />
+    <Compile Include="Interface\IInfoCollection.cs" />
+    <Compile Include="Interface\IL2LMessageUpdated.cs" />
+    <Compile Include="Interface\ILog.cs" />
+    <Compile Include="Interface\IPort.cs" />
+    <Compile Include="Interface\ITick.cs" />
+    <Compile Include="Interface\IViewEntity.cs" />
+    <Compile Include="Interface\IViewEntityCollection.cs" />
+    <Compile Include="Languages\FWLanguages.cs" />
+    <Compile Include="Logging\DirectLog.cs" />
+    <Compile Include="Logging\DLogInfo.cs" />
+    <Compile Include="Logging\DummyLog.cs" />
+    <Compile Include="Logging\IConsole.cs" />
+    <Compile Include="Logging\StandardConsole.cs" />
+    <Compile Include="Logging\TraceHelper.cs" />
+    <Compile Include="Pattern\SemaphoreSlim.cs" />
+    <Compile Include="Pattern\Singleton.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session\SessionDatas.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{682D3344-82F5-4AA3-BBC0-090CE78B6639}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Parking.App.Contract</RootNamespace>
+    <AssemblyName>Parking.App.Contract</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\AdStoreMgtInfo.cs" />
+    <Compile Include="Common\ServerInfo.cs" />
+    <Compile Include="Common\tblAdMgtInfo.cs" />
+    <Compile Include="Common\tblClientSoundDeployHistInfo.cs" />
+    <Compile Include="Common\tblClientSoundMgtInfo.cs" />
+    <Compile Include="Common\tblCommonInfo.cs" />
+    <Compile Include="Common\tblCommonSubInfo.cs" />
+    <Compile Include="Common\tblDeviceRequestConnectInfo.cs" />
+    <Compile Include="Common\tblStoreDeviceInfo.cs" />
+    <Compile Include="Common\tblStoreEnvironmentSettingInfo.cs" />
+    <Compile Include="Common\tblStoreMasterInfo.cs" />
+    <Compile Include="Common\tblStoreUseHistoryInfo.cs" />
+    <Compile Include="Common\tblTempDeployInfo.cs" />
+    <Compile Include="Common\tblUserHistoryInfo.cs" />
+    <Compile Include="Common\tblUserInfo.cs" />
+    <Compile Include="Common\tblUserMgtStoreInfo.cs" />
+    <Compile Include="Common\tblUserPhotoInfo.cs" />
+    <Compile Include="Entity\UserEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\SSignature.cs" />
+    <Compile Include="Setting\AccountInfo.cs" />
+    <Compile Include="Setting\ClientSessionHandlerInfo.cs" />
+    <Compile Include="Setting\SettingInfo.cs" />
+    <Compile Include="Setting\VersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Connect.Common\Connect.Common.csproj">
+      <Project>{12D9262B-762C-43D0-BEFA-5837B5C87038}</Project>
+      <Name>Connect.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Parking.App.Common\Parking.App.Common.csproj">
+      <Project>{5E42B08D-DC7A-4092-A143-AEBB26F1FE0D}</Project>
+      <Name>Parking.App.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
